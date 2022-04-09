@@ -31,7 +31,9 @@ set smartindent
 " 自动换行缩进
 set autoindent
 " 软折行
-set linebreak
+" set linebreak
+" 不要折行
+set nowrap
 " 禁止生成swap文件
 set noswapfile
 " 终端隐藏后不结束

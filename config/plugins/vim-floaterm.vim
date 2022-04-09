@@ -13,4 +13,5 @@ augroup vime_floaterm_group
     autocmd!
     au FileType floaterm tnoremap <buffer> <silent> <M-h> <c-\><c-n>:FloatermPrev<CR>
     au FIleType floaterm tnoremap <buffer> <silent> <M-l> <c-\><c-n>:FloatermNext<CR>
+    au FIleType floaterm tnoremap <buffer> <silent> <M-c> <c-\><c-n>:FloatermKill<CR>
 augroup END

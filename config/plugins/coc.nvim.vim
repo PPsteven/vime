@@ -118,7 +118,7 @@ endif
 if common#functions#HasPlug('coc-fzf')
     nnoremap <silent> <space>A  :<C-u>CocFzfList diagnostics<CR>
     nnoremap <silent> <space>a  :<C-u>CocFzfList diagnostics --current-buf<CR>
-    nnoremap <silent> <space>c  :<C-u>CocFzfList commands<CR>
+    " nnoremap <silent> <space>c  :<C-u>CocFzfList commands<CR>
     nnoremap <silent> <space>e  :<C-u>CocFzfList extensions<CR>
     nnoremap <silent> <space>l  :<C-u>CocFzfList<CR>
     " nnoremap <silent> <space>l  :<C-u>CocFzfList location<CR>

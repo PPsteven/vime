@@ -58,12 +58,12 @@ let g:fzf_colors = {
     \ 'header':  ['fg', 'Comment'] }
 
 "-----------------------------------------------------------------------------
-" 使用ctrl jk上下移动选项
+" 使用ctrl pn上下移动选项
 "-----------------------------------------------------------------------------
 augroup vime_fzf_group
     autocmd!
-    au FileType fzf tnoremap <buffer> <C-j> <Down>
-    au FileType fzf tnoremap <buffer> <C-k> <Up>
+    au FileType fzf tnoremap <buffer> <C-n> <Down>
+    au FileType fzf tnoremap <buffer> <C-p> <Up>
     au FileType fzf tnoremap <buffer> <Esc> <c-g>
 augroup END
 
@@ -74,7 +74,8 @@ augroup END
 " 使用系统应用打开文件
 function! s:SystemExecute(lines)
     for line in a:lines
-        exec 'silent !xdg-open ' . fnameescape(line) . ' > /dev/null'
+        " exec 'silent !xdg-open ' . fnameescape(line) . ' > /dev/null'
+        exec 'open ' . fnameescape(line) . ' > /dev/null'
     endfor
 endfunction
 

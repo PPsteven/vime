@@ -22,3 +22,5 @@ endfunction
 
 " nnoremap <F3> :Vista!!<CR>
 nnoremap <F3> :call <SID>vista_toggle()<CR>
+
+let g:vista#executives = ['ale', 'coc', 'ctags', 'lcn', 'nvim_lsp', 'vim_lsc', 'vim_lsp']

@@ -61,7 +61,9 @@ let g:NERDTreeMapUpdirKeepOpen = '<backspace>'
 let g:NERDTreeMapOpenInTab = 't'
 " 在节点之间跳转，无效
 let g:NERDTreeMapJumpNextSibling = 'J'
-let g:NERDTreeMapJumpPrevSibling = 'K'
+let g:NEeDTreeMapJumpPrevSibling = 'K'
+" 打开菜单
+let g:NERDTreeMapMenu = "m"
 
 augroup vime_nerdtree_group
     autocmd!

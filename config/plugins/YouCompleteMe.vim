@@ -1,5 +1,5 @@
 " 全局的.ycm_extra_conf.py路径
-let g:ycm_global_ycm_extra_conf = g:other_config_root_path . "/ycm_extra_conf.py"
+" let g:ycm_global_ycm_extra_conf = g:other_config_root_path . "/ycm_extra_conf.py"
 " 最少触发提示单词数量
 let g:ycm_min_num_of_chars_for_completion = 1
 " 补全列表可见候选条目数量
@@ -22,7 +22,7 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_collect_identifiers_from_comments_and_strings = 1
 
 " 自定义python解释器路径
-" let g:ycm_server_python_interpreter = '~/Software/anaconda3/bin/python3.8'
+let g:ycm_server_python_interpreter = '/opt/anaconda3/bin/python'
 
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -61,6 +61,9 @@ let g:ycm_language_server =
   \     'project_root_files': ['.git', "compile_commands.json", "compile_flags.txt"]
   \   },
   \ ]
+
+let g:ycm_server_keep_logfiles = 1
+let g:ycm_server_log_level = 'debug'
 
 nmap <silent> gd :YcmCompleter GoToDefinition<cr>
 nmap <silent> gy :YcmCompleter GoToType<cr>

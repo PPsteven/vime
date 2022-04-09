@@ -22,7 +22,6 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-lists',
     \ 'coc-just-complete',
-    \ 'coc-python',
     \ 'coc-marketplace',
     \ 'coc-java',
   \ ]

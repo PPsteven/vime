@@ -1,3 +1,8 @@
+" Meta 设置
+" Mac 中没有Meta 键，需要在iterm2 中进行键位映射
+" Preferences -> Profiles -> Keys -> Left option map to Esc+
+" 主要不要映射为 Meta（old system），要映射为Esc+
+
 " 窗口相关快捷键
 noremap <c-h> <C-w>h
 noremap <c-j> <C-w>j
@@ -103,14 +108,17 @@ vnoremap k gk
 
 " 复制到末尾
 nnoremap Y y$
+" 选中整行（非空格）
 nnoremap vv ^vg_
 
+" 移动到上一个缓冲区或tab
 if !common#functions#HasPlug('vim-airline') && !common#functions#HasPlug('vim-crystalline')
     nnoremap  <M-l> :call common#functions#MoveTabOrBuf(1)<cr>
     nnoremap  <M-h> :call common#functions#MoveTabOrBuf(0)<CR>
     tnoremap  <M-l> <c-\><c-n>:call common#functions#MoveTabOrBuf(1)<cr>
     tnoremap  <M-h> <c-\><c-n>:call common#functions#MoveTabOrBuf(0)<CR>
 endif
+
 nnoremap <silent> <leader>tn :tabnew<cr>
 nnoremap <silent> <leader>tc :tabclose<cr>
 nnoremap <silent> <M-L> :tabmove +1<cr>
@@ -120,3 +128,6 @@ tnoremap <silent> <M-H> <c-\><c-n>:tabmove -1<cr>
 
 " 使用系统应用打开当前buffer文件
 noremap <silent> <M-x> :call common#functions#OpenFileUsingSystemApp(expand('%:p'))<cr>
+
+" Reload vims configuration file
+nnoremap rr :source $MYVIMRC<CR>

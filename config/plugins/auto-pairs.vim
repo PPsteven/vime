@@ -10,6 +10,14 @@
 " 避免冲突
 let g:AutoPairsMapCh = 0
 
+" If <M-p> <M-e> or <M-n> conflict with another keys or want to bind to another keys, add
+" let g:AutoPairsShortcutToggle = '<another key>'
+" to .vimrc, if the key is empty string '', then the shortcut will be disabled.
+
+let g:AutoPairsShortcutToggle = ''
+
+" The default pairs is {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
+" You could also define multibyte pairs such as <!-- -->, <% %> and so on
 augroup vime_auto_paris_group
     autocmd!
     au FileType php  let b:AutoPairs = AutoPairsDefine({'<?' : '?>', '<?php': '?>'})

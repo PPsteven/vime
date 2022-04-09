@@ -3,7 +3,6 @@ exec "source " . fnamemodify($MYVIMRC, ':h') . "/config.vim"
 
 " 定义载入配置命令
 command! -nargs=1 LoadScript exec 'source ' . g:config_root_path . '<args>'
-
 " 载入基础配置
 LoadScript base.vim
 
@@ -44,7 +43,9 @@ endfunction
 " 载入插件配置
 " g:plugs loads after calling plug#begin()
 " following code is to load plugs in config/plugins
-for [plugName, _] in items(g:plugs)
+" all plugs can be got from g:plugs_order(list) and g:plugs(dict)
+" for [plugName, _] in items(g:plugs)
+for plugName in g:plugs_order
     if common#functions#HasInstall(plugName)
         call s:source_config(plugName)
     endif
