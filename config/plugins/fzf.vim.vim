@@ -1,3 +1,4 @@
+" :call plug#load('fzf') to restart plug
 "-----------------------------------------------------------------------------
 " 全局配置
 "-----------------------------------------------------------------------------
@@ -62,6 +63,12 @@ let g:fzf_colors = {
 "-----------------------------------------------------------------------------
 augroup vime_fzf_group
     autocmd!
+    " disable window swith in floating window
+    au FileType fzf tnoremap <buffer> <C-h> <Nop>
+    au FileType fzf tnoremap <buffer> <C-j> <Nop>
+    au FileType fzf tnoremap <buffer> <C-k> <Nop>
+    au FileType fzf tnoremap <buffer> <C-l> <Nop>
+
     au FileType fzf tnoremap <buffer> <C-n> <Down>
     au FileType fzf tnoremap <buffer> <C-p> <Up>
     au FileType fzf tnoremap <buffer> <Esc> <c-g>
