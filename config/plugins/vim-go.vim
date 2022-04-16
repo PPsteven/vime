@@ -1,4 +1,3 @@
-
 " Use new vim 8.2 popup windows for Go Doc
 let g:go_doc_popup_window = 1
 

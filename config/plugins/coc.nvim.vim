@@ -20,6 +20,7 @@
         \ 'coc-just-complete',
         \ 'coc-marketplace',
         \ 'coc-java',
+        \ 'coc-jedi',
     \ ]
 
 

@@ -226,6 +226,8 @@ else
     " " Plug 'f-person/git-blame.nvim'
 endif
 
+Plug '907th/vim-auto-save'
+
 " =============== Vim Plugin for developing =========================
 " python
 " Plug 'davidhalter/jedi-vim'

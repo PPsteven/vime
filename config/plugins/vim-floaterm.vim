@@ -19,5 +19,4 @@ augroup vime_floaterm_group
     au FileType floaterm tnoremap <buffer> <C-j> <Nop>
     au FileType floaterm tnoremap <buffer> <C-k> <Nop>
     au FileType floaterm tnoremap <buffer> <C-l> <Nop>
-    au FileType floaterm tnoremap <buffer> <Esc> <c-\><c-n>:FloatermToggle<cr>
 augroup END

@@ -38,5 +38,6 @@
     "diagnostic.displayByAle": false,
     "diagnostic.maxWindowHeight": 10,
     "languageserver": {},
+    "jedi.startupMessage": true,
     "jedi.executable.command": "/opt/anaconda3/bin/jedi-language-server"
 }
