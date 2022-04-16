@@ -1,22 +1,47 @@
-" coc插件安装目录
-let g:coc_data_home = g:cache_root_path . 'coc/'
-" coc-settings.json所在目录
-let g:coc_config_home = g:other_config_root_path
+    " reference: https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions
+    " coc extensions can providing a better user experience like vscode
+    "
+    " a.Install by commend
+    " :CocInstall coc-json coc-css
+    " b.Install by global variables, coc will install the missing extensions
+    " after coc.nvim service started.
+    " coc插件列表，可根据需要进行删减
+    let g:coc_global_extensions = [
+        \ 'coc-vimlsp',
+        \ 'coc-xml',
+        \ 'coc-yank',
+        \ 'coc-sh',
+        \ 'coc-yaml',
+        \ 'coc-cmake',
+        \ 'coc-snippets',
+        \ 'coc-clangd',
+        \ 'coc-json',
+        \ 'coc-lists',
+        \ 'coc-just-complete',
+        \ 'coc-marketplace',
+        \ 'coc-java',
+    \ ]
 
-" 卸载不在列表中的插件
-function! s:uninstall_unused_coc_extensions() abort
-    if has_key(g:, 'coc_global_extensions')
-        for e in keys(json_decode(join(readfile(expand(g:coc_data_home . '/extensions/package.json')), "\n"))['dependencies'])
-            if index(g:coc_global_extensions, e) < 0
-                execute 'CocUninstall ' . e
-            endif
-        endfor
-    endif
-endfunction
-autocmd User CocNvimInit call s:uninstall_unused_coc_extensions()
 
-" 检查当前光标前面是不是空白字符
-function! s:check_back_space() abort
+    " coc插件安装目录
+    let g:coc_data_home = g:cache_root_path . 'coc/'
+    " coc-settings.json所在目录
+    let g:coc_config_home = g:other_config_root_path
+
+    " 卸载不在列表中的插件
+    function! s:uninstall_unused_coc_extensions() abort
+        if has_key(g:, 'coc_global_extensions')
+            for e in keys(json_decode(join(readfile(expand(g:coc_data_home . '/extensions/package.json')), "\n"))['dependencies'])
+                if index(g:coc_global_extensions, e) < 0
+                    execute 'CocUninstall ' . e
+                endif
+            endfor
+        endif
+    endfunction
+    autocmd User CocNvimInit call s:uninstall_unused_coc_extensions()
+
+    " 检查当前光标前面是不是空白字符
+    function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -54,6 +79,15 @@ inoremap <silent><expr> <up>
 if common#functions#HasCocPlug('coc-snippets')
     let g:coc_snippet_next = '<m-j>'
     let g:coc_snippet_prev = '<m-k>'
+endif
+
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+    nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+    inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+    inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+    vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+    vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 endif
 
 " 回车选中或者扩展选中的补全内容

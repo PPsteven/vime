@@ -36,7 +36,7 @@ Plug 'liuchengxu/vista.vim'
 " 对齐
 Plug 'junegunn/vim-easy-align', {'on': ['EasyAlign', '<Plug>(EasyAlign)']}
 " 多光标
-" Plug 'mg979/vim-visual-multi'
+Plug 'mg979/vim-visual-multi'
 
 " csv插件
 " Plug 'chrisbra/csv.vim', {'for': 'csv'}
@@ -216,9 +216,19 @@ else
     Plug 'ryanoasis/vim-devicons'
 endif
 
+" git插件
+Plug 'tpope/vim-fugitive'
+
+if has('nvim')
+    Plug 'nvim-lua/plenary.nvim' | Plug 'tanvirtin/vgit.nvim'
+else
+    Plug 'rbong/vim-flog' | Plug 'airblade/vim-gitgutter'
+    " " Plug 'f-person/git-blame.nvim'
+endif
+
 " =============== Vim Plugin for developing =========================
 " python
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 
 " c debug
 " Plug 'puremourning/vimspector'
@@ -233,6 +243,9 @@ Plug 'davidhalter/jedi-vim'
 " else
     " Plug 'RRethy/vim-hexokinase',  { 'do': 'make hexokinase' }
 " endif
+
+" go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " =============== others =========================
 " 隐私模式
 " Plug 'ernstwi/vim-secret'

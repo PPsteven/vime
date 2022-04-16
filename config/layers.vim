@@ -8,8 +8,6 @@ let g:mapleader = "\<Space>"
 " LoadScript layers/lsp_completion-nvim.vim
 LoadScript layers/lsp_coc.vim
 " LoadScript layers/lsp_jedi.vim
-" git类插件组合
-LoadScript layers/git.vim
 
 " search
 " LoadScript layers/search_telecope.vim
