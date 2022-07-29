@@ -46,8 +46,9 @@ set ignorecase
 set infercase
 " 历史命令
 set history=500
-" 在右方分, 不止为何失效fixing
+" 在下方分屏
 set splitright
+set splitbelow
 " tab扩展为空格
 set expandtab
 set tabstop=4

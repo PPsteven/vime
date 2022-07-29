@@ -1,9 +1,30 @@
+snippet lc
+#include <stack>
+#include <unordered_map>
+#include <map>
+#include <unordered_set>
+#include <set>
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <iostream>
+#include <queue>
+#include <list>
+using namespace std;
 
-snippet mian
-int main(int argc, char *arg[]) {
+int main() {
     ${1}
+	auto ans = Solution()
+	cout << ans << endl;
+	for (int x: ans) {
+		cout << x << ' ';
+	}
+	cout << endl;
     return 0;
 }
+endsnippet
+
+snippet main
 endsnippet
 
 snippet sc

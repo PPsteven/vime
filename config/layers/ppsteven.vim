@@ -28,8 +28,8 @@ Plug 'liuchengxu/vista.vim'
 " Plug 'machakann/vim-sandwich'
 
 " 代码段
-" Plug 'honza/vim-snippets'
-" Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 " 快速选择窗口
 " Plug 't9md/vim-choosewin'
@@ -165,19 +165,19 @@ if has("nvim")
 endif
 
 " 彩虹括号
-if has('nvim')
-    Plug 'p00f/nvim-ts-rainbow'
-else
-    Plug 'luochen1990/rainbow'
-endif
+" if has('nvim')
+    " Plug 'p00f/nvim-ts-rainbow'
+" else
+    " Plug 'luochen1990/rainbow'
+" endif
 
 " 显示清除尾部空格
 Plug 'ntpeters/vim-better-whitespace'
 
 " 在右侧显示一个滚动条, 可鼠标拖动
-if has('nvim')
-    Plug 'dstein64/nvim-scrollview'
-endif
+" if has('nvim')
+    " Plug 'dstein64/nvim-scrollview'
+" endif
 
 " 显示搜索的数量
 Plug 'kevinhwang91/nvim-hlslens'
@@ -248,6 +248,10 @@ Plug '907th/vim-auto-save'
 
 " go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" cpp
+" compile and run cpp
+LoadScript layers/cpp.vim
 " =============== others =========================
 " 隐私模式
 " Plug 'ernstwi/vim-secret'

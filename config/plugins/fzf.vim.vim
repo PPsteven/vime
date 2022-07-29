@@ -413,7 +413,7 @@ nnoremap <M-c> :Commands<CR>
 nnoremap <M-m> :FzfMarks<CR>
 " nnoremap <M-m> :Marks<CR>
 nnoremap <M-M> :Maps<CR>
-nnoremap <M-w> :Windows<CR>
+" nnoremap <M-w> :Windows<CR>
 if common#functions#HasPlug('coc-fzf')
     nnoremap <M-y> :<c-u>CocFzfList yank<CR>
 endif

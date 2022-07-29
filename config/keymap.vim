@@ -98,8 +98,8 @@ endfunction
 " noremap <silent> <space><space> <esc>:call common#functions#Wall()<cr>
 " noremap <silent> <space><space> <esc>:call <SID>writeCurrent()<cr>
 " xnoremap <silent> <space><space> <esc>:call <SID>writeCurrent()<cr>
-noremap <silent> <space><space> <esc>:silent! write<cr>
-xnoremap <silent> <space><space> <esc>:silent! write<cr>
+noremap <space><space> <esc>:silent! write<cr>
+xnoremap <space><space> <esc>:silent! write<cr>
 
 nnoremap j gj
 nnoremap k gk
